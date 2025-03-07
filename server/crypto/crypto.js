@@ -1,5 +1,5 @@
 const fs = require("fs");
-const keys = require("../keys.json");
+const keys = require("./keys.json");
 
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
 

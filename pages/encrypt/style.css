@@ -67,6 +67,10 @@
     outline: none;
 }
 
+.textarea .output {
+    word-break: break-all;
+}
+
 .buttonsarea {
     width: 35vw;
     height: 8vh;
