@@ -14,6 +14,10 @@ const apiManager = {
     decrypt: async (text) => {
         const result = await crypto.decryptText(text);
         return result;
+    },
+
+    createKey: async() => {
+        await crypto.generateKey();
     }
 }
 

@@ -14,13 +14,20 @@
         </div>
         <div class="textarea">
             <textarea name="input" class="input" id="input" spellcheck="false"></textarea>
-            <div class="output" style="display: none;"></div>
+            <div class="output" id="output" style="display: none;"></div>
         </div>
         <ul class="buttonsarea">
             <li class="button back"><a href="/home">Voltar</a></li>
-            <li class="button decrypt">Decriptar</li>
-            <li class="button copy" style="display: none;">Copiar</li>
+            <li class="button decrypt" id="decrypt">Decriptar</li>
+            <li class="button copy" id="copy" style="display: none;">Copiar</li>
         </ul>
+        <div class="notify-container">
+            <div class="notify-area">
+                <div class="notify" id="success"><i class="fa-regular fa-circle-check"></i> Texto copiado!</div>
+                <div class="notify" id="error"><i class="fa-regular fa-circle-xmark"></i> Insira um texto!</div>
+            </div>
+        </div>
     </div>
 </body>
+<script type="text/javascript" src="index.js"></script>
 </html>

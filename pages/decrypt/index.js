@@ -1,15 +1,12 @@
-const encryptButton = document.querySelector('#encrypt');
+const decryptButton = document.querySelector('#decrypt');
 const copyButton = document.querySelector('#copy');
 
 const outputArea = document.querySelector('#output');
 const inputArea = document.querySelector('#input');
 
-const successNotify = document.querySelector('#success');
-const errorNotify = document.querySelector('#error');
+let decryptedText;
 
-let encryptedText;
-
-encryptButton.addEventListener('click', async () => {
+decryptButton.addEventListener('click', async () => {
     const textInput = inputArea.value
 
     if(textInput == "") {
@@ -20,25 +17,24 @@ encryptButton.addEventListener('click', async () => {
         return
     }
 
-    const res = await fetch(`/api/encrypt?text=${textInput}`, {
+    const res = await fetch(`/api/decrypt?text=${textInput}`, {
         method: "POST"
     });
 
-    encryptedText = await res.text();
+    decryptedText = await res.text();
 
-    outputArea.innerHTML = encryptedText;
+    outputArea.innerHTML = decryptedText;
     outputArea.style.display = 'block';
 
     copyButton.style.display = 'flex';
 
-    document.querySelector('.buttonsarea').classList.add('active')
+    document.querySelector('.buttonsarea').classList.add('active');
 })  
 
 copyButton.addEventListener('click', async () => {
-    navigator.clipboard.writeText(encryptedText);
+    navigator.clipboard.writeText(decryptedText)
     successNotify.style.marginTop = 0;
     setTimeout(() => {
         successNotify.style.marginTop = '-50vw';
     },2000)
 })
-
