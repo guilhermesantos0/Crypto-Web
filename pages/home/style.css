@@ -9,6 +9,10 @@
     font-family: 'Blinker', Arial, Helvetica, sans-serif;
 }
 
+body {
+    background: rgb(27, 27, 27);
+}
+
 .container {
     width: 100vw;
     height: 100vh;
@@ -19,8 +23,6 @@
     justify-content: center;
 
     gap: 5vh;
-
-    background: rgb(27, 27, 27);
 }
 
 .title {
@@ -150,4 +152,19 @@
 
 .notify i {
     margin-right: 1vh;
+}
+
+@media screen and (max-width: 767px) {
+    .options {
+        width: 100vw;
+        height: 70vh;
+    }
+
+    .option {
+        width: 80vw;
+    }
+
+    .option a {
+        width: 70vw;
+    }
 }

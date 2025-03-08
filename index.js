@@ -20,6 +20,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/api/:endpoint', async (req, res) => {
+    console.log(req.params.endpoint)
     const result = await apiManager(req.params.endpoint, req.query?.text || null)
     res.send(result)
 })

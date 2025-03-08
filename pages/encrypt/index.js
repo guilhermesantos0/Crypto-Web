@@ -4,7 +4,7 @@ const copyButton = document.querySelector('#copy');
 const outputArea = document.querySelector('#output');
 const inputArea = document.querySelector('#input');
 
-const successNotify = document.querySelector('#success');
+
 const errorNotify = document.querySelector('#error');
 
 let encryptedText;

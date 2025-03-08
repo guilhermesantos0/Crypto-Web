@@ -9,9 +9,13 @@
     font-family: 'Blinker', Arial, Helvetica, sans-serif;
 }
 
+body {
+    background: rgb(27, 27, 27);
+}
+
 .container {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
 
     display: flex;
     flex-direction: column;
@@ -19,8 +23,6 @@
     justify-content: center;
 
     gap: 5vh;
-
-    background: rgb(27, 27, 27);
 }
 
 .title {
@@ -35,7 +37,7 @@
 
 .textarea {
     width: 90vw;
-    height: 50vh;
+    min-height: 50vh;
 
     display: flex;
     align-items: center;
@@ -44,7 +46,6 @@
     gap: 3vw;
 
     list-style: none;
-
 }
 
 .textarea .input,
@@ -202,4 +203,32 @@
 
 .notify i {
     margin-right: 1vh;
+}
+
+@media screen and (max-width: 767px) {
+    .textarea {
+        width: 100vw;
+    }
+
+    .buttonsarea {
+        flex-direction: column;
+        height: 18vh;
+    }
+
+    .buttonsarea.active {
+        height: 27vh;
+    }
+
+    .textarea .input,
+    .textarea .output {
+        width: 80vw;
+    }
+
+    .button {
+        width: 70vw;
+    }
+
+    .button:hover {
+        transform: scale(1);
+    }
 }

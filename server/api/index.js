@@ -16,8 +16,11 @@ const apiManager = {
         return result;
     },
 
-    createKey: async() => {
+    createkey: async() => {
+        console.log('recebeu')
         await crypto.generateKey();
+        const keysAmount = crypto.getKeysAmount();
+        return keysAmount;
     }
 }
 
