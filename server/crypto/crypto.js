@@ -167,6 +167,10 @@ const crypto = {
 
         let _keys = []
         fs.writeFileSync("keys.json",JSON.stringify(_keys))
+    },
+
+    getKeys: () => {
+        return keys
     }
 
 }

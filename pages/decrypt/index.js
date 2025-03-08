@@ -4,6 +4,9 @@ const copyButton = document.querySelector('#copy');
 const outputArea = document.querySelector('#output');
 const inputArea = document.querySelector('#input');
 
+const errorNotify = document.querySelector('#error');
+const successNotify = document.querySelector('#success');
+
 let decryptedText;
 
 decryptButton.addEventListener('click', async () => {

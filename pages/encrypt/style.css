@@ -156,7 +156,7 @@ body {
 }
 
 .notify-container {
-    position: absolute;
+    position: fixed;
 
     top: 5vh;
     right: 0;
@@ -230,5 +230,13 @@ body {
 
     .button:hover {
         transform: scale(1);
+    }
+
+    .notify-container {
+        width: 90vw;
+    }
+
+    .notify {
+        width: 80vw;
     }
 }

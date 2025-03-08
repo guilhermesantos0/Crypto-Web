@@ -7,6 +7,8 @@ const path = require('path');
 const apiManager = require('./server/api/index');
 
 app.use(express.static(path.join(__dirname, 'pages')));
+app.set('views', path.join(__dirname, 'pages/keys/{id}'));
+app.set('view engine', 'ejs');
 
 const files = fs.readdirSync('./pages');
 files.forEach(file => {
@@ -14,6 +16,12 @@ files.forEach(file => {
         res.sendFile(path.join(__dirname, `pages/${file}/index.html`));
     })
 })
+
+app.get('/keys/:id', (req, res) => {
+    const id = req.params.id;
+
+    res.render('index', { id });
+});
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'pages/home/index.html'));

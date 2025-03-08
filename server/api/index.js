@@ -17,10 +17,16 @@ const apiManager = {
     },
 
     createkey: async() => {
-        console.log('recebeu')
         await crypto.generateKey();
         const keysAmount = crypto.getKeysAmount();
         return keysAmount;
+    },
+    
+    getkeys: async() => {
+        const keys = await crypto.getKeys();
+        const keysAmount = crypto.getKeysAmount();
+
+        return { keys, keysAmount }
     }
 }
 
