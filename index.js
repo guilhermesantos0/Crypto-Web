@@ -28,9 +28,19 @@ app.get('/', (req, res) => {
 })
 
 app.post('/api/:endpoint', async (req, res) => {
-    console.log(req.params.endpoint)
-    const result = await apiManager(req.params.endpoint, req.query?.text || null)
-    res.send(result)
+    const result = await apiManager(req.params.endpoint, req.query?.text || null);
+    res.send(result);
+})
+
+app.get('/api/:endpoint', async (req, res) => {
+    const result = await apiManager(req.params.endpoint, req.query?.text || null);
+    if(req.params.endpoint == 'backup') {
+
+        return res.download(result, 'backup.json', (err) => { if(err) console.log(err) })
+
+    } else {
+        res.send(result);
+    }
 })
 
 app.listen(3000, () => console.log('Servidor rodando na porta 3000.'));

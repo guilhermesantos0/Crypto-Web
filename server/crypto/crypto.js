@@ -97,7 +97,8 @@ const crypto = {
         }
     
         keys.push(key) 
-        fs.writeFileSync("keys.json",JSON.stringify(keys))
+        fs.writeFileSync("./server/crypto/keys.json",JSON.stringify(keys))
+        // fs.writeFileSync("keys.json",JSON.stringify(keys))
     },
     
     // generateKey();
