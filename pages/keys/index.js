@@ -24,3 +24,7 @@ const getKeys = async () => {
     })
 
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    getKeys();
+})

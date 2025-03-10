@@ -28,7 +28,7 @@ const apiManager = {
     },
     
     getkeys: async() => {
-        const keys = crypto.getKeyIds();
+        const keys = await crypto.getKeyIds();
         const keysAmount = crypto.getKeysAmount();
 
         return { keys, keysAmount }
