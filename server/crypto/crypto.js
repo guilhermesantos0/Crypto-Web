@@ -172,6 +172,15 @@ const crypto = {
 
     getKeys: () => {
         return keys
+    },
+
+    getKeyIds: async () => {
+        const keyIds = [];
+        await keys.forEach(key => {
+            keyIds.push(key.id);
+        })
+
+        return keyIds;
     }
 
 }
