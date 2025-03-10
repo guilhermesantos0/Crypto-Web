@@ -28,12 +28,12 @@ app.get('/', (req, res) => {
 })
 
 app.post('/api/:endpoint', async (req, res) => {
-    const result = await apiManager(req.params.endpoint, req.query?.text || null);
+    const result = await apiManager(req.params.endpoint, req.query || null);
     res.send(result);
 })
 
 app.get('/api/:endpoint', async (req, res) => {
-    const result = await apiManager(req.params.endpoint, req.query?.text || null);
+    const result = await apiManager(req.params.endpoint, req.query || null);
     if(req.params.endpoint == 'backup') {
 
         return res.download(result, 'backup.json', (err) => { if(err) console.log(err) })
