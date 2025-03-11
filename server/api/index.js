@@ -3,9 +3,6 @@ const path = require('path');
 const fs = require('fs');
 
 const run = async (endpoint, args = null) => {
-
-    console.log(args)
-
     const result = await apiManager[endpoint](args)
     return result
 }

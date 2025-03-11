@@ -184,10 +184,14 @@ const crypto = {
     },
 
     getKeyById: async (keyId) => {
+        let keyInfos;
         keys.forEach(key => {
-            console.log(key.id, keyId, key.id == keyId)
-            if(key.id == keyId) return key
+            if(key.id == keyId) {
+                keyInfos = key;
+            }
         })
+
+        return keyInfos
     }
 
 }

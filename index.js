@@ -6,6 +6,13 @@ const path = require('path');
 
 const apiManager = require('./server/api/index');
 
+app.get("/keys/:id/index.js", (req, res) => {
+    const id = req.params.id;
+    res.setHeader("Content-Type", "application/javascript");
+    res.sendFile(path.join(__dirname, 'pages', 'keys', '{id}', 'index.js'));
+});
+
+app.use(express.static(path.join(__dirname, 'pages/keys')));
 app.use(express.static(path.join(__dirname, 'pages')));
 app.set('views', path.join(__dirname, 'pages/keys/{id}'));
 app.set('view engine', 'ejs');
@@ -42,5 +49,7 @@ app.get('/api/:endpoint', async (req, res) => {
         res.send(result);
     }
 })
+
+
 
 app.listen(3000, () => console.log('Servidor rodando na porta 3000.'));

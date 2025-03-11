@@ -12,24 +12,26 @@
             <h1 class="title"><%= id %></h1>
         </div>
         <div class="key-infos">
-            <div class="id-area">
-                <h2 class="id-label">Id:</h2>
-                <div class="id-content"></div>
+            <div class="left-area">
+                <div class="id-area">
+                    <h2 class="id-label">Id:</h2>
+                    <div class="id-content" id="id-content"></div>
+                </div>
+                <div class="space-area">
+                    <h2 class="space-label">Espaço: </h2>
+                    <div class="space-content" id="space-content"></div>
+                </div>
             </div>
             <div class="replaces-area">
                 <h2 class="replaces-label">Replaces:</h2>
-                <div class="replaces-content"></div>
-            </div>
-            <div class="space-area">
-                <h2 class="space-label">Espaço: </h2>
-                <div class="space-content"></div>
+                <ul class="replaces-content" id="replaces-content"></ul>
             </div>
         </div>
         <div class="back"><a href="/keys">Voltar</a></div>
     </div>
 </body>
-<script>
+<script type="text/javascript">
     const id = '<%= id %>'
 </script>
-<script type="text/javascript" src="index.js"></script>
+<script src="/keys/<%= id %>/index.js"></script>
 </html>
